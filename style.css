@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #110f0f;
+  color: white;
+}
+
+/* Styling of Child1... */
+
+#child1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.todo + h3 {
+  margin: 20px;
+  font-size: 25px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0px;
+}
+
+#title,
+#description {
+  margin: 2px 0px;
+  outline: none;
+  font-size: 15px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid white;
+}
+
+#title {
+  width: 82vw;
+}
+
+#description {
+  min-width: 82vw;
+  max-width: 82vw;
+  min-height: 25vh;
+  max-height: 50vh;
+}
+
+#submit {
+  cursor: pointer;
+  padding: 5px 0px;
+  width: 70px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: 2px solid black;
+  background-color: yellow;
+}
+
+.hr {
+  margin: 20px;
+}
+
+/* Styling of Child2... */
+
+#child2 {
+  margin-top: 10px;
+}
+
+#child2 .lists {
+  padding-left: 60px;
+  margin-bottom: 25px;
+}
+
+.listItems {
+  border: 2px solid #443a3a;
+  margin: 5% 5%;
+  padding: 2%;
+  border-radius: 5%;
+}
+
+.listItems .delSpan,
+.listItems .compSpan{
+  position: relative;
+  left: 80%;
+  padding: 0px 5px;
+}
+
+.del,.comp{
+  cursor: pointer;
+}
+
+.listItems h5{
+  font-size: 18px;
+  word-break: break-all;
+}
+
+.listItems .description{
+  margin-top: 6px;
+  margin-bottom: 20px;
+  margin-left: 15px;
+  font-size: 15px;
+  word-break: break-all;
+  color: gray;
+}
+
+.complete h5,
+.complete p{
+  opacity: 60%;
+  /* text-decoration: line-through; */
+}
+
+.complete .delSpan,
+.complete .compSpan,
+.complete .date{
+  opacity: 80%;
+}
+
+.listItems .delSpan .del{
+  color: red;
+}
+.listItems .compSpan .comp{
+  color: #7cff0d;
+}
+
+.date{
+  position: relative;
+  left: 60%;
+  font-size: 12px;
+  color: yellow;
+}
+
+
