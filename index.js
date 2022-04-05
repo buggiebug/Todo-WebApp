@@ -85,7 +85,7 @@ const addNew = (title,desc)=>{
         desc: desc,
         index: "list"+size,
         comp: 0,
-        storeDate: days[date.getDay()] +" - "+ date.getDate() +"/"+ date.getMonth() +"/"+ date.getFullYear()
+        storeDate: days[date.getDay()] +" - "+ date.getDate() +"/"+ (parseInt(date.getMonth())+1) +"/"+ date.getFullYear()
     }
 
     if(localStorage.getItem("list")==null){
