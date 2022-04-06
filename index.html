@@ -11,11 +11,12 @@
 <body>
 
     <div id="child1">
-            <p class="todo"><h3>Todo :</h3></p>
+            <p class="todo"><h3>Todo</h3></p>
             <div class="box">
                 <input type="text" placeholder="Title" id="title"  name="quantity" min="1" max="5"/>
                 <textarea id="description" placeholder="Description"></textarea>
                 <br>
+                <span id="msgEmpty">Title is required.</span>
                 <button type="submit" id="submit" onclick="addTodo()">Add</button>
             </div>
     </div>

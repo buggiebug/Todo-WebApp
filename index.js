@@ -1,7 +1,8 @@
 let title = document.getElementById("title");
 let desc = document.getElementById("description");
 
-let child2 = document.getElementById("child2")
+let child2 = document.getElementById("child2");
+let msgEmpty = document.getElementById("msgEmpty");
 
 // Render data with using localStorage... 
 function localData(){
@@ -55,11 +56,26 @@ localData();
 
 
 // Add Todo...
-function addTodo (){
+async function addTodo (){
 
-    if(title.value !== "" && desc.value !== ""){
-        addNew(title.value,desc.value);
+    if(title.value === ""){
+        msgEmpty.style.visibility = "visible";
+        msgEmpty.style.color = "#f85959";
+        msgEmpty.innerText = "Title is required.";
+        await setTimeout(()=>{
+            msgEmpty.style.visibility = "hidden";
+        },2000)
     }
+    else{
+        await addNew(title.value,desc.value);
+        msgEmpty.style.visibility = "visible";
+        msgEmpty.style.color = "#7de057";
+        msgEmpty.innerText = "Task added.";
+        await setTimeout(()=>{
+            msgEmpty.style.visibility = "hidden";
+        },2000)
+    }
+
     title.value = ""
     desc.value = ""
 }
@@ -81,11 +97,11 @@ const addNew = (title,desc)=>{
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     let data ={
+        index: "list"+size,
         title: title,
         desc: desc,
-        index: "list"+size,
-        comp: 0,
-        storeDate: days[date.getDay()] +" - "+ date.getDate() +"/"+ (parseInt(date.getMonth())+1) +"/"+ date.getFullYear()
+        storeDate: days[date.getDay()] +" - "+ date.getDate() +"/"+ (parseInt(date.getMonth())+1) +"/"+ date.getFullYear(),
+        comp: 0
     }
 
     if(localStorage.getItem("list")==null){

@@ -110,7 +110,7 @@ body {
 .complete h5,
 .complete p{
   opacity: 60%;
-  /* text-decoration: line-through; */
+  text-decoration: line-through;
 }
 
 .complete .delSpan,
@@ -133,4 +133,6 @@ body {
   color: yellow;
 }
 
-
+#msgEmpty{
+  visibility: hidden;
+}
